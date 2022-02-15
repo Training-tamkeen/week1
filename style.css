@@ -2,6 +2,8 @@ body{
     background-color: #0067F4;
     margin: 0;
     padding: 0;
+    /* Enable background printing in Chrome*/
+    -webkit-print-color-adjust: exact !important;
 }
 
 ul{
@@ -30,13 +32,16 @@ a:hover{
 header{
     height: 70px;
     background-color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 #discover{
     color: white;
     text-align: center;
     width: 70%;
-    margin: 20vh auto;
+    margin: 30vh auto;
 }
 
 #discover img{
@@ -104,4 +109,14 @@ footer p{
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+}
+
+@media print{
+    body{
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+    }
+    header{
+        position: relative;
+    }
 }
